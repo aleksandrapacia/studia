@@ -23,8 +23,14 @@ class Ulamek():
     def to_str(self):
         return f"To jest ułamek ,który ma licznik = {self.l} i mianownik ={self.m}"
 
+    def __add__(self, drugi):
+        licznik = self.l + drugi.m + drugi.l *self.m
+        mianownik = self.m * drugi.m
+        return Ulamek(licznik, mianownik)
+        #kod dodawania ułamka
 
 
+#(2).__ad__(2) - > argument po prawej stronie
 ulamek1 = Ulamek(1,2)
 ulamek2 = Ulamek(2, 4)
 print(ulamek1.m)
@@ -34,3 +40,22 @@ print(ulamek1.l)
 print(ulamek1) #objekt w miejscu pamieci
 print(ulamek1.to_str())
 print(ulamek1)
+print(ulamek1+ulamek2)
+
+# algorytm do liczenia największej wspólnej wielokrotności
+a = input("Podaj liczbe: ")
+b = input("Podaj liczbe: ")
+
+def najwieksza(a, b):
+    while True:
+        if a != b:
+            if a > b:
+                a = a - b
+
+            else:
+                 b = b - a
+
+        else:
+            print(a)
+        print(a)
+        print(b)
